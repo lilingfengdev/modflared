@@ -98,6 +98,11 @@ public class TunnelManager {
         if (!isHost(host)) {
             return null;
         }
+
+        if (host.endsWith("trycloudflare.com")) {
+            return host;
+        }
+
         try {
             var properties = new Properties();
             properties.put("java.naming.factory.initial", "com.sun.jndi.dns.DnsContextFactory");
